@@ -1,0 +1,73 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+
+        System.out.printf("Hello, Welcome to HOTEL");
+
+        Scanner myObj = new Scanner(System.in);
+        System.out.println("\nEnter your name:");
+        String userName = myObj.nextLine();
+        System.out.println("\nenter your ADDHAR Card No.:");
+        String ADDHAR = myObj.nextLine();
+        System.out.println("\n We have 3 types of room available here:\n 1.GOLD\n 2.SILVER\n 3.BRONZE");
+        System.out.println("\n Here are the details about the room options:\n 1.GOLD:\n Per Day Price:2500\n Services:\t price\n a.Laundry\t 500\n b.Spa\t\t 500\n c.GYM\t\t 500\n d.Pool\t\t 500\n e.Room Service\t500 ");
+        System.out.println("\n 2.SILVER:\n Per Day Price:2000\n Services:\t price\n a.Laundry\t 500\n b.Spa\t\t 500\n c.GYM\t\t 500\n d.Room Service\t500 ");
+        System.out.println("\n 3.BRONZE:\n Per Day Price:1500\n Services:\t price\n a.Laundry\t 500\n b.Spa\t\t 500\n c.Room Service\t500 ");
+        System.out.println("\nEnter the number to select the room\n 1 for GOLD\n 2 for SILVER\n 3 for BRONZE");
+
+        int room= myObj.nextInt();
+        switch(room) {
+            case 1:
+                System.out.println("Dear customer,you have choose GOLD as your room option.");
+                break;
+            case 2:
+                System.out.println("Dear customer,you have choose SILVER as your room option.");
+                break;
+            case 3:
+                System.out.println("Dear customer,you have choose BRONZE as your room option.");
+                break;
+        }
+        System.out.println("For calulating the bill please enter the information");
+        System.out.println("Enter the number of days stay");
+        int days_stayed= myObj.nextInt();
+
+        if(room==1){
+            int roomrent=2500;
+            System.out.println("Your roomrent is :" + roomrent*days_stayed);
+            double roomCost = roomrent* days_stayed;
+            double GST=  roomCost * 0.18;
+            System.out.println("GST:"+ GST);
+            double Tax=  roomCost*0.02;
+            System.out.println("Tax:"+ Tax);
+            int Totalbill= (int)(roomrent *  days_stayed +  GST+  Tax);
+            System.out.println("Your total bill is :" + Totalbill);
+        }
+        else if (room==2) {
+            int roomrent=2000;
+            System.out.println("Your roomrent is :" + roomrent*days_stayed);
+            double roomCost = roomrent* days_stayed;
+            double GST=  roomCost * 0.18;
+            System.out.println("GST:"+ GST);
+            double Tax=  roomCost*0.02;
+            System.out.println("Tax:"+ Tax);
+            int Totalbill= (int)(roomrent *  days_stayed +  GST+  Tax);
+            System.out.println("Your total bill is :" + Totalbill);
+        }
+        else if (room==3) {
+            int roomrent=1500;
+            System.out.println("Your roomrent is :" + roomrent*days_stayed);
+            double roomCost = roomrent* days_stayed;
+            double GST=  roomCost * 0.18;
+            System.out.println("GST:"+ GST);
+            double Tax=  roomCost*0.02;
+            System.out.println("Tax:"+ Tax);
+            int Totalbill= (int) (roomrent*days_stayed +GST+Tax);
+            System.out.println("Your total bill is :" + Totalbill);
+        }
+        else {
+            System.out.println("Please choose valid room type.");
+        }
+
+    }
+}
